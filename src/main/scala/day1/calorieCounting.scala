@@ -1,13 +1,8 @@
-package day1
-import scala.util.{Try, Using}
-import scala.io.Source.fromResource
 import scala.math.max
+import utils.readFile
 
 case class Elf(items: List[Int]):
   val capacity = items.sum
-
-def readFile(filename: String): Try[String] =
-  Using(fromResource(filename))(_.mkString)
 
 def inputToElves(inputString: String): List[Elf] =
   val blocks = inputString.split("\n\n").toList
