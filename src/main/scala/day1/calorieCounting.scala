@@ -11,7 +11,7 @@ def inputToElves(inputString: String): List[Elf] =
 
 @main def mainDay1: Unit =
   val input =
-    readFile("day1/input.txt").getOrElse(throw Exception("Failed to read file"))
+    readFile("day2.txt").getOrElse(throw Exception("Failed to read file"))
 
   val elves = inputToElves(input)
   val sortedCapacities = elves.map(_.capacity).sorted(Ordering[Int].reverse)

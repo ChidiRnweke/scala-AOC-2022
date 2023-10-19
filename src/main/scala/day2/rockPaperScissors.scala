@@ -92,7 +92,7 @@ def lineToPair(line: String): Option[(RawOppInput, RawInput)] =
 
 @main def mainDay2: Unit =
   val moves =
-    readFile("day2/input.txt")
+    readFile("day2.txt")
       .getOrElse(throw Exception("Failed to read file"))
       .split("\n")
       .map(lineToPair)
