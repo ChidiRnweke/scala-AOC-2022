@@ -16,6 +16,9 @@ object State:
         val (a, s1) = run(state)
         (f(a), s1)
 
+    def map2[B, C](rb: State[S, B], f: (A, B) => C): State[S, C] =
+      flatMap(a => rb.map(b => f(a, b)))
+
     def >>[B](next: => State[S, B]): State[S, B] =
       flatMap(_ => next)
   def get[S]: State[S, S] = s => (s, s)
